@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+div.iframe iframe {
+    width: 95vw;
+    height: 26vh;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.200);
+}
+
+div.iframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.field {
+    margin: 10px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+div.field button {
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+    div.iframe iframe {
+        width: 90vw;
+        height: 50vh;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    div.iframe iframe {
+        margin-top: 30px;
+        width: 90vw;
+        height: 85vh;
+        border-radius: 20px;
+    }
+}
