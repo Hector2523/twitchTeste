@@ -1,12 +1,21 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
+
+* {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+:root {
+    --fonteum: 'Pixelify Sans';
+}
 
 body {
     background-color: rgb(39, 39, 39);
+    padding-bottom: 2.5%;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    height: 100vh;
+    justify-content: center;
 }
 
 div.iframe iframe {
@@ -14,24 +23,79 @@ div.iframe iframe {
     height: 26vh;
     border-radius: 20px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.200);
+    animation: box 2s forwards;
 }
 
 div.iframe {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
-div.field {
-    margin: 10px;
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    flex-direction: column;
+div.field, div.field2 {
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
 }
 
-div.field button {
+div.field h1 {
+    color: #7347b4;
+    font-family: var(--fonteum);
+    letter-spacing: 0.5px;
+}
+
+div.field2 h1 {
+    color: #7347b4;
+    font-family: var(--fonteum);
+    letter-spacing: 0.5px;
+}
+
+div.field2 select {
     cursor: pointer;
+}
+
+
+button {
+    cursor: pointer;
+    margin: 5px 0px;
+}
+
+@keyframes box {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    25% {
+        height: 6.5vh;
+    }
+
+    50% {
+        height: 6.5vh;
+    }
+
+    75% {
+        height: 6.5vw;
+    }
+
+    85% {
+        width: 23.75vw;
+    }
+
+    90% {
+        width: 47.5vw;
+    }
+
+    95% {
+        width: 71.25vw;
+    }
+
+    100% {
+        width: 95vw;
+    }
 }
 
 @media only screen and (min-width: 600px) {
