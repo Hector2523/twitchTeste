@@ -13,14 +13,7 @@
 <body>
     <main>
         <div class="iframe" id="twitch-embed"></div>
-        <div id="twitch-chat">
-            <iframe id="twitch-chat-embed" sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-modals"
-        src="https://www.twitch.tv/embed/twitchdev/chat?parent=dev.twitch.tv"
-        height="500"
-        width="350">
-            </iframe>
-
-        </div>
+        <iframe src="https://www.twitch.tv/embed/ciberdracof/chat?parent=http://127.0.0.1:5500/" frameborder="0"></iframe>
         <div class="field">
             <div>
                 <h1>Importar canal</h1>
@@ -31,7 +24,7 @@
         </div>
         <div class="field2">
             <h1>Mostrar chat?</h1>
-            <select id="" required>
+            <select id="chat" required>
                 <option value="none" disabled selected>Selecione uma opção</option>
                 <option value="Sim">Sim</option>
                 <option value="Não">Não</option>
@@ -51,6 +44,15 @@
                 channel: channelName
             });
         }
+
+        let chat = document.getElementById("chat");
+        let iframe = document.getElementById("twitch-chat");
+
+        switch (chat) {
+            case (chat.value == Sim):
+                iframe.style.display = "none";
+        }
+        
     </script>
 
 </body>
