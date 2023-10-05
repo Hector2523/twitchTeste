@@ -33,6 +33,10 @@ div.iframe {
 
 }
 
+div.chat {
+    display: none;
+}
+
 div.field, div.field2 {
     display: block;
     margin: auto;

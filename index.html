@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twitch</title>
     <link rel="stylesheet" href="style/style.css">
-    <script src="blockad/ads.js"></script>
-    <script src="blockad/background.js"></script>
-    <script src="blockad/content.js"></script>
-    <script src="blockad/popup.js"></script>
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script> <!-- Moved this script to the head section -->
 </head>
 <body>
     <main>
         <div class="iframe" id="twitch-embed"></div>
-        <iframe src="https://www.twitch.tv/embed/ciberdracof/chat?parent=http://127.0.0.1:5500/" frameborder="0"></iframe>
+        <div class="chat">
+            <iframe id="twitch-chat" src="https://www.twitch.tv/embed/ciberdracof/chat?parent=http://127.0.0.1:5500/"
+                frameborder="0"></iframe>
+        </div>
         <div class="field">
             <div>
                 <h1>Importar canal</h1>
@@ -30,11 +30,9 @@
                 <option value="Não">Não</option>
             </select>
             <br>
-            <button>Aplicar</button>
+            <button onclick="abrirChat()">Aplicar</button>
         </div>
     </main>
-
-    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
 
     <script type="text/javascript">
         function embedTwitchChannel() {
@@ -45,19 +43,21 @@
             });
         }
 
-        let chat = document.getElementById("chat");
-        let iframe = document.getElementById("twitch-chat");
+        function abrirChat() {
+            let chatSelect = document.getElementById("chat");
+            let iframe = document.getElementById("twitch-chat");
 
-        switch (chat) {
-            case (chat.value == Sim):
-                iframe.style.display = "block";
-            case (chat.value == Não):
-                iframe.style.display = "none";
-            default:
-                alert("Opção inválida");
+            switch (chatSelect.value) {
+                case "Sim":
+                    iframe.style.display = "block";
+                    break;
+                case "Não":
+                    iframe.style.display = "none";
+                    break;
+                default:
+                    alert("Opção inválida");
+            }
         }
-        
     </script>
-
 </body>
 </html>
