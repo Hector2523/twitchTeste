@@ -50,7 +50,11 @@
 
         switch (chat) {
             case (chat.value == Sim):
+                iframe.style.display = "block";
+            case (chat.value == Não):
                 iframe.style.display = "none";
+            default:
+                alert("Opção inválida");
         }
         
     </script>
