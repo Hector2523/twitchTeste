@@ -1,0 +1,27 @@
+
+    <!-- <script type="text/javascript">
+        function embedTwitchChannel() {
+            let channelName = document.getElementById("escolhaCanal").value;
+            document.getElementById("twitch-embed").innerHTML = "";
+            new Twitch.Player("twitch-embed", {
+                channel: channelName
+            });
+        }
+
+        function abrirChat() {
+            let chatSelect = document.getElementById("chat");
+            const iframe = document.getElementById("twitch-chat-embed");
+
+            switch (chatSelect.value) {
+                case "1":
+                    iframe.style.display = "block";
+                    break;
+                case "2":
+                    iframe.style.display = "none";
+                    break;
+                default:
+                    alert(chatSelect.value)
+                    alert("Opção inválida");
+            }
+        }
+    </script> -->

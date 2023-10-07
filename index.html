@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,20 @@
     <link rel="stylesheet" href="style/style.css">
     <script src="https://player.twitch.tv/js/embed/v1.js"></script> <!-- Moved this script to the head section -->
 </head>
+
 <body>
     <main>
-        <div class="iframe" id="twitch-embed"></div>
-        <div class="chat">
-            <iframe id="twitch-chat" src="https://www.twitch.tv/embed/ciberdracof/chat?parent=http://127.0.0.1:5500/"
-                frameborder="0"></iframe>
+        <!-- iframes  -->
+        <div class="container">
+            <div class="iframe" id="twitch-embed"></div>
+            <div class="chat" id="chatField">
+                <iframe id="twitch-chat-embed">
+                </iframe>
+            </div>
         </div>
+
+        <!-- Importar canal -->
+
         <div class="field">
             <div>
                 <h1>Importar canal</h1>
@@ -22,42 +30,22 @@
                 <button onclick="embedTwitchChannel()">Incorporar Canal</button>
             </div>
         </div>
+
+        <!-- Chat -->
+
         <div class="field2">
             <h1>Mostrar chat?</h1>
             <select id="chat" required>
-                <option value="none" disabled selected>Selecione uma opção</option>
-                <option value="Sim">Sim</option>
-                <option value="Não">Não</option>
+                <option value="0" disabled selected>Selecione uma opção</option>
+                <option value="1">Sim</option>
+                <option value="2">Não</option>
             </select>
             <br>
             <button onclick="abrirChat()">Aplicar</button>
         </div>
     </main>
 
-    <script type="text/javascript">
-        function embedTwitchChannel() {
-            let channelName = document.getElementById("escolhaCanal").value;
-            document.getElementById("twitch-embed").innerHTML = "";
-            new Twitch.Player("twitch-embed", {
-                channel: channelName
-            });
-        }
-
-        function abrirChat() {
-            let chatSelect = document.getElementById("chat");
-            let iframe = document.getElementById("twitch-chat");
-
-            switch (chatSelect.value) {
-                case "Sim":
-                    iframe.style.display = "block";
-                    break;
-                case "Não":
-                    iframe.style.display = "none";
-                    break;
-                default:
-                    alert("Opção inválida");
-            }
-        }
-    </script>
+    <script src="twapi.js" type="text/javascript"></script>
 </body>
+
 </html>
