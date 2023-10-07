@@ -20,13 +20,14 @@ function abrirChat() {
   }
   
   console.log("abrirChat(): iFrame  display=["+ getComputedStyle(iframe).display +"]");
+  const doaminName = document.location.host;
   switch (chatSelect.value) {
       case "0": 
       document.getElementById("twitch-embed").style.animation = "box 1.5s forwards";
       break;
       case "1":
           iframe.style.display = "block";
-          iframe.setAttribute("src", "https://www.twitch.tv/embed/"+channelName+"/chat?parent=localhost");
+          iframe.setAttribute("src", "https://www.twitch.tv/embed/"+channelName+"/chat?parent=" + domainName);
           document.getElementById("twitch-embed").style.animation = "boxNone 1.5s forwards";
           break;
       case "2":
