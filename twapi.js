@@ -20,7 +20,7 @@ function abrirChat() {
   }
   
   console.log("abrirChat(): iFrame  display=["+ getComputedStyle(iframe).display +"]");
-  const doaminName = document.location.host;
+  const domainName = document.location.host;
   switch (chatSelect.value) {
       case "0": 
       document.getElementById("twitch-embed").style.animation = "box 1.5s forwards";
